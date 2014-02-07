@@ -1,7 +1,8 @@
 package com.isai.agavelabs;
 
 /**
- * Hello world!
+ * task #1 of agavelab
+ * @author uriel isai rodriguez rivas
  *
  */
 public class App 
