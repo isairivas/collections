@@ -21,5 +21,12 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    <!-- library of google for collections and more -->
+    <dependency>
+		<groupId>com.google.guava</groupId>
+		<artifactId>guava</artifactId>
+		<version>15.0</version>
+	</dependency>
+            
   </dependencies>
 </project>
