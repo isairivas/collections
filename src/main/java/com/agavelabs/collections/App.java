@@ -1,6 +1,8 @@
 package com.agavelabs.collections;
 
-import com.google.common.collect.Multimap;
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
+
 
 /**
  * task #1 of agavelab
@@ -10,39 +12,37 @@ import com.google.common.collect.Multimap;
 public class App 
 {
     
+    private static final Logger log =  Logger.getLogger(com.agavelabs.collections.App.class.getName());
+    
     
     public App(){
-    	MyCollectionsImp lista = new MyCollectionsImp();
-    	lista.insert(5);
-
-    	lista.insert(8);
-    	lista.insert(10);
-    	lista.insert(10);
-    	lista.insert(8);
-    	for(int i = 1;i<9999;i++){
-    		lista.insert(i);
-    		if(i == 987171 ){
-    			lista.insert(i);
-    		}
-    	}
     	
-    	System.out.println("termino de agregar elementos");
-    	int eliminado = lista.removeLargest();
-    	System.out.println("Eliminado:"+eliminado);
-    	//System.out.println(lista.remove(987171));
-    	print(lista);
-    	System.out.println("fin");
+    	MyCollections list = new MyCollectionImp();
+    	
+    	list.insert(40);
+    	list.insert(25);
+    	int c = list.insert(30);
+    	
+    	int r1 = list.remove(c);
+    	log.info(r1);
+    	
+    	int r2 = list.removeLargest();
+    	log.info(r2);
+    	
+    	list.insert(50);
+    	
+    	int r3 = list.removeLargest();
+    	log.info(r3);
+    	
+    	int r4 = list.removeLargest();
+    	log.info(r4);	
+    	
     }
     
-    private void print(MyCollectionsImp lista){
-    	 Multimap<Integer, Integer> map = lista.get();
-    	for(Object item: map.values()){
-    		System.out.println(item);
-    	}
-    }
     
     public static void main( String[] args )
     {
+    	BasicConfigurator.configure();
         new App();
     }
     
