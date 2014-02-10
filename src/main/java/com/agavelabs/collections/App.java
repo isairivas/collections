@@ -12,8 +12,7 @@ import org.apache.log4j.Logger;
 public class App 
 {
     
-    private static final Logger log =  Logger.getLogger(com.agavelabs.collections.App.class.getName());
-    
+    private final Logger log =  Logger.getLogger(com.agavelabs.collections.App.class.getName());
     
     public App(){
     	
@@ -35,15 +34,21 @@ public class App
     	log.info(r3);
     	
     	int r4 = list.removeLargest();
-    	log.info(r4);	
+    	log.info(r4);
     	
+    	
+    	/* insert elements, only millions not billions, depends on the memory */
+    	for(int i = 1;i<30000000;i++){
+    		list.insert(i);
+    	} 
+    	
+    	log.info(list.removeLargest());
     }
-    
     
     public static void main( String[] args )
     {
-    	BasicConfigurator.configure();
-        new App();
+    	BasicConfigurator.configure(); // configure apache log4j
+        new App(); // new instance of App
     }
     
 }
