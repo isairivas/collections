@@ -11,7 +11,7 @@ import com.google.common.collect.Lists;
  */
 public class MyCollectionImp implements MyCollections {
 	
-	private final List<Integer> collection = Lists.newArrayList();
+	private  List<Integer> collection = Lists.newArrayList();
 	
 	public MyCollectionImp() {}
 
